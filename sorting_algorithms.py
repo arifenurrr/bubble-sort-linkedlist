@@ -1,0 +1,23 @@
+from ds import *
+
+def bubble_sort(theSeq):
+    if isinstance(theSeq, list):
+        n = len(theSeq)
+        for i in range(n - 1):
+            for j in range(n - (i + 1)):
+                if theSeq[j] > theSeq[j + 1]:
+                    tmp = theSeq[j]
+                    theSeq[j] = theSeq[j + 1]
+                    theSeq[j + 1] = tmp
+        return theSeq
+
+    elif isinstance(theSeq, LinkedList):
+        data_list = theSeq.to_list()
+        sorted_list = bubble_sort(data_list)  # yukarıdaki liste kodunu kullan
+        theSeq.from_list(sorted_list)
+        return theSeq
+
+    else:
+        raise TypeError("Unsupported data type for sorting")
+
+
