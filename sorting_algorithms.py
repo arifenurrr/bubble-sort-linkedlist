@@ -13,7 +13,7 @@ def bubble_sort(theSeq):
 
     elif isinstance(theSeq, LinkedList):
         data_list = theSeq.to_list()
-        sorted_list = bubble_sort(data_list)  # yukarıdaki liste kodunu kullan
+        sorted_list = bubble_sort(data_list)  
         theSeq.from_list(sorted_list)
         return theSeq
 
