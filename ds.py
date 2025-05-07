@@ -111,6 +111,52 @@ class Stack:
             prev.next = nxt
         else:
             self.head = nxt
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+    def __iter__(self):
+        current = self.head
+        while current:
+            yield current.data
+            current = current.next
+
+    def __len__(self):
+        count = 0
+        current = self.head
+        while current:
+            count += 1
+            current = current.next
+        return count
+
+    def get_node(self, index):
+        current = self.head
+        for _ in range(index):
+            if current is None:
+                return None
+            current = current.next
+        return current
+
+    def swap(self, index1, index2):
+        node1 = self.get_node(index1)
+        node2 = self.get_node(index2)
+        if node1 and node2:
+            node1.data, node2.data = node2.data, node1.data
 
 
 
