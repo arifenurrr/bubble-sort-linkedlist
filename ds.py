@@ -158,6 +158,18 @@ class LinkedList:
         if node1 and node2:
             node1.data, node2.data = node2.data, node1.data
 
+    def swap_nodes(self, node1, node2):
+       node1.data, node2.data = node2.data, node1.data
+
+
+def to_list(self):
+    result = []
+    current = self.head
+    while current:
+        result.append(current.data)
+        current = current.next
+    return result
+
 
 
 
