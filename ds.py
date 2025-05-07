@@ -159,7 +159,10 @@ class LinkedList:
             node1.data, node2.data = node2.data, node1.data
 
     def swap_nodes(self, node1, node2):
-       node1.data, node2.data = node2.data, node1.data
+       if node1 is None or node2 is None:
+        return
+        node1.data, node2.data = node2.data, node1.data
+
 
 
 def to_list(self):
@@ -169,6 +172,7 @@ def to_list(self):
         result.append(current.data)
         current = current.next
     return result
+
 
 
 
