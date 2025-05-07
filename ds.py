@@ -23,13 +23,15 @@ class LinkedList:
             yield current.data
             current = current.next
 
-    def to_list(self):
-        return list(iter(self))
-
-    def from_list(self, data_list):
-        self.head = None
-        for data in data_list:
-            self.append(data)
+    def swap_nodes(self, prev, curr):
+        nxt = curr.next
+        if not nxt:
+            return
+        curr.next, nxt.next = nxt.next, curr
+        if prev:
+            prev.next = nxt
+        else:
+            self.head = nxt
 
 
     
